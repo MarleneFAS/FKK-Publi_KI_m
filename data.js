@@ -59,5 +59,25 @@ export const categories = {
       "Badisch", "Mecklenburgisch", "Westfälisch", "Oberpfälzisch", "Vorarlbergerisch",
       "Tirolerisch", "Steirisch", "Kärntnerisch", "Elsässisch"
     ]
+  },
+  genres: {
+    label: "Genres",
+    items: [
+      "Western", "Horrorfilm", "Romantische Komödie", "Science-Fiction", "Märchen",
+      "Krimi", "Actionfilm", "Dokumentation", "Musical", "Thriller",
+      "Historisches Drama", "Zeichentrick", "Stummfilm", "Soap Opera", "Gameshow",
+      "Naturfilm", "Kriegsfilm", "Superhelden", "Detektivgeschichte", "Liebesfilm",
+      "Katastrophenfilm", "Abenteuerfilm", "Biografie", "Satirische Komödie"
+    ]
+  },
+  gegenstaende: {
+    label: "Gegenstände",
+    items: [
+      "Regenschirm", "Koffer", "Taschenlampe", "Kochbuch", "Fernbedienung",
+      "Zahnbürste", "Kompass", "Schachfigur", "Blumentopf", "Schlüsselbund",
+      "Tagebuch", "Kamera", "Hammer", "Spiegel", "Uhr",
+      "Gitarre", "Fernglas", "Briefumschlag", "Teddybär", "Kerze",
+      "Landkarte", "Stethoskop", "Handschellen", "Zauberstab"
+    ]
   }
 };

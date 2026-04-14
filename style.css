@@ -1,7 +1,6 @@
 /* ============================================================
-   Improv Theater Trainer – style.css
-   Theatralisches Design: dunkler Hintergrund, farbige Buttons
-   Responsive: 320px → mobil, ≥768px → mehrspaltiges Grid
+   FKK-Publi_KI_m – style.css
+   Farbschema: Rot, Schwarz, Weiß mit gelben Akzenten
    ============================================================ */
 
 /* ---------- Reset & Basis ---------- */
@@ -19,10 +18,8 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  background-color: #0d0d1a;
-  background-image:
-    radial-gradient(ellipse at top, #1a0a2e 0%, #0d0d1a 60%);
-  color: #e8e0f0;
+  background-color: #111111;
+  color: #f0f0f0;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
 }
@@ -38,107 +35,91 @@ body {
 .app-header {
   text-align: center;
   padding: 2rem 0 2.5rem;
+  border-bottom: 3px solid #cc0000;
+  margin-bottom: 2rem;
 }
 
 .app-title {
-  font-size: clamp(1.8rem, 5vw, 3rem);
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  color: #f0c040;
-  text-shadow: 0 0 20px rgba(240, 192, 64, 0.4);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 400;
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  text-shadow: 3px 3px 0px #cc0000;
 }
 
 .app-subtitle {
   margin-top: 0.5rem;
   font-size: 1rem;
-  color: #a090c0;
+  color: #f5c518;
 }
 
 /* ---------- Kategorie-Grid ---------- */
 #category-grid {
-  display: grid;
-  gap: 0.75rem;
-  /* Mobil: 1–2 Spalten */
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
-/* Ab 768px: mindestens 3 Spalten */
-@media (min-width: 768px) {
-  #category-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-}
-
-/* Ab 1024px: 4 Spalten möglich */
-@media (min-width: 1024px) {
-  #category-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
-}
-
-/* Sehr schmale Geräte (320–479px): 1 Spalte */
-@media (max-width: 479px) {
-  #category-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ---------- Kategorie-Buttons ---------- */
+/* ---------- Kategorie-Buttons (rund) ---------- */
 #category-grid button {
-  /* Touch-freundliche Mindestgröße: 44×44px */
-  min-height: 44px;
-  min-width: 44px;
-  padding: 0.75rem 1rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 0.5rem;
 
-  background: linear-gradient(135deg, #6a0dad, #9b30d0);
-  color: #fff;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
+  background: #cc0000;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(106, 13, 173, 0.4);
-  touch-action: manipulation; /* verhindert 300ms-Delay auf Touch */
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  touch-action: manipulation;
+  text-align: center;
+  line-height: 1.2;
 }
 
 #category-grid button:hover {
-  background: linear-gradient(135deg, #8a1fd0, #bf50f0);
-  box-shadow: 0 6px 18px rgba(155, 48, 208, 0.6);
-  transform: translateY(-2px);
+  background: #ff1a1a;
+  border-color: #f5c518;
+  box-shadow: 0 6px 18px rgba(204, 0, 0, 0.7), 0 0 0 2px #f5c518;
+  transform: translateY(-3px) scale(1.05);
 }
 
 #category-grid button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(106, 13, 173, 0.4);
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 #category-grid button:focus-visible {
-  outline: 3px solid #f0c040;
-  outline-offset: 3px;
+  outline: 3px solid #f5c518;
+  outline-offset: 4px;
 }
 
 /* ---------- Ergebnisanzeige ---------- */
 #result-section {
   margin-top: 2.5rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(240, 192, 64, 0.25);
+  background: #1a1a1a;
+  border: 2px solid #cc0000;
   border-radius: 14px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 .result-heading {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #f0c040;
+  color: #f5c518;
   margin-bottom: 1rem;
   text-align: center;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
-/* Ergebnisliste: mindestens 24px Schriftgröße (Anforderung 3.4) */
+/* Ergebnisliste: mindestens 24px Schriftgröße */
 .result-list {
   list-style: none;
   display: flex;
@@ -147,13 +128,13 @@ body {
 }
 
 .result-list li {
-  font-size: 1.5rem; /* ≥ 24px */
+  font-size: 1.5rem;
   font-weight: 500;
   padding: 0.6rem 1rem;
-  background: rgba(240, 192, 64, 0.08);
-  border-left: 4px solid #f0c040;
+  background: #222222;
+  border-left: 4px solid #cc0000;
   border-radius: 6px;
-  color: #f0e8ff;
+  color: #ffffff;
   line-height: 1.3;
 }
 
@@ -161,10 +142,10 @@ body {
 .warning-box {
   margin-top: 1rem;
   padding: 0.6rem 1rem;
-  background: rgba(255, 160, 0, 0.15);
-  border: 1px solid rgba(255, 160, 0, 0.5);
+  background: rgba(245, 197, 24, 0.1);
+  border: 1px solid #f5c518;
   border-radius: 6px;
-  color: #ffa040;
+  color: #f5c518;
   font-size: 0.9rem;
 }
 
@@ -178,23 +159,25 @@ body {
 #retry-btn {
   min-height: 44px;
   min-width: 44px;
-  padding: 0.75rem 2rem;
-  background: linear-gradient(135deg, #c0392b, #e74c3c);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
+  padding: 0.75rem 2.5rem;
+  background: #cc0000;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 14px rgba(231, 76, 60, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
   touch-action: manipulation;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 #retry-btn:hover {
-  background: linear-gradient(135deg, #e74c3c, #ff6b5b);
-  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.65);
+  background: #ff1a1a;
+  border-color: #f5c518;
+  box-shadow: 0 6px 20px rgba(204, 0, 0, 0.6);
   transform: translateY(-2px);
 }
 
@@ -203,7 +186,7 @@ body {
 }
 
 #retry-btn:focus-visible {
-  outline: 3px solid #f0c040;
+  outline: 3px solid #f5c518;
   outline-offset: 3px;
 }
 
@@ -211,7 +194,7 @@ body {
 .app-footer {
   text-align: center;
   margin-top: 3rem;
-  color: #604080;
+  color: #555555;
   font-size: 0.85rem;
 }
 
