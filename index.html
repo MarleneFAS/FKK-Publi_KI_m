@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Improv Theater Trainer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <header class="app-header">
+      <h1 class="app-title">🎭 Improv Theater Trainer</h1>
+      <p class="app-subtitle">Wähle eine Kategorie und erhalte 5 zufällige Vorgaben</p>
+    </header>
+
+    <main>
+      <!-- Kategorie-Buttons -->
+      <section aria-label="Kategorien">
+        <div id="category-grid">
+          <!-- Wird von app.js dynamisch befüllt -->
+        </div>
+      </section>
+
+      <!-- Ergebnisanzeige (initial versteckt) -->
+      <section id="result-section" aria-live="polite" hidden>
+        <h2 id="result-heading" class="result-heading"></h2>
+        <ul id="result-list" class="result-list">
+          <!-- Wird von app.js dynamisch befüllt -->
+        </ul>
+        <div id="warning-box" class="warning-box" hidden></div>
+      </section>
+
+      <!-- Nochmal-Button (initial versteckt) -->
+      <div class="retry-wrapper">
+        <button id="retry-btn" type="button" hidden>
+          🔄 Nochmal
+        </button>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>Viel Spaß beim Improvisieren!</p>
+    </footer>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
