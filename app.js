@@ -37,6 +37,9 @@ export function renderResult(elements, label, picks, warning) {
 
   resultSection.removeAttribute("hidden");
   retryBtn.removeAttribute("hidden");
+  setTimeout(() => {
+    resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 50);
 }
 
 /**

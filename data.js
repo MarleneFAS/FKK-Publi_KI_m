@@ -11,7 +11,7 @@ export const categories = {
     ]
   },
   charaktereigenschaften: {
-    label: "Charaktereigenschaften",
+    label: "Eigenschaften",
     items: [
       "Geizig", "Großzügig", "Feige", "Mutig", "Arrogant",
       "Bescheiden", "Neugierig", "Gleichgültig", "Optimistisch", "Pessimistisch",

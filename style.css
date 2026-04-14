@@ -42,10 +42,11 @@ body {
 .app-title {
   font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 400;
-  font-family: 'Fredoka One', cursive;
-  letter-spacing: 0.04em;
-  color: #ffffff;
-  text-shadow: 3px 3px 0px #cc0000;
+  font-family: 'Anton', Impact, sans-serif;
+  letter-spacing: 0.06em;
+  color: #cc0000;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0px #000000;
 }
 
 .app-subtitle {
