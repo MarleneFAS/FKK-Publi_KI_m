@@ -1,0 +1,13 @@
+{
+  "name": "improv-theater-trainer",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0",
+    "fast-check": "^3.19.0",
+    "happy-dom": "^14.0.0"
+  }
+}

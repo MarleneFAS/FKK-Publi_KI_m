@@ -1,0 +1,221 @@
+/* ============================================================
+   Improv Theater Trainer – style.css
+   Theatralisches Design: dunkler Hintergrund, farbige Buttons
+   Responsive: 320px → mobil, ≥768px → mehrspaltiges Grid
+   ============================================================ */
+
+/* ---------- Reset & Basis ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #0d0d1a;
+  background-image:
+    radial-gradient(ellipse at top, #1a0a2e 0%, #0d0d1a 60%);
+  color: #e8e0f0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+/* ---------- Layout-Wrapper ---------- */
+.app-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* ---------- Header ---------- */
+.app-header {
+  text-align: center;
+  padding: 2rem 0 2.5rem;
+}
+
+.app-title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #f0c040;
+  text-shadow: 0 0 20px rgba(240, 192, 64, 0.4);
+}
+
+.app-subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #a090c0;
+}
+
+/* ---------- Kategorie-Grid ---------- */
+#category-grid {
+  display: grid;
+  gap: 0.75rem;
+  /* Mobil: 1–2 Spalten */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Ab 768px: mindestens 3 Spalten */
+@media (min-width: 768px) {
+  #category-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Ab 1024px: 4 Spalten möglich */
+@media (min-width: 1024px) {
+  #category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+/* Sehr schmale Geräte (320–479px): 1 Spalte */
+@media (max-width: 479px) {
+  #category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Kategorie-Buttons ---------- */
+#category-grid button {
+  /* Touch-freundliche Mindestgröße: 44×44px */
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.75rem 1rem;
+
+  background: linear-gradient(135deg, #6a0dad, #9b30d0);
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(106, 13, 173, 0.4);
+  touch-action: manipulation; /* verhindert 300ms-Delay auf Touch */
+}
+
+#category-grid button:hover {
+  background: linear-gradient(135deg, #8a1fd0, #bf50f0);
+  box-shadow: 0 6px 18px rgba(155, 48, 208, 0.6);
+  transform: translateY(-2px);
+}
+
+#category-grid button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(106, 13, 173, 0.4);
+}
+
+#category-grid button:focus-visible {
+  outline: 3px solid #f0c040;
+  outline-offset: 3px;
+}
+
+/* ---------- Ergebnisanzeige ---------- */
+#result-section {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(240, 192, 64, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.result-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f0c040;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+/* Ergebnisliste: mindestens 24px Schriftgröße (Anforderung 3.4) */
+.result-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.result-list li {
+  font-size: 1.5rem; /* ≥ 24px */
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  background: rgba(240, 192, 64, 0.08);
+  border-left: 4px solid #f0c040;
+  border-radius: 6px;
+  color: #f0e8ff;
+  line-height: 1.3;
+}
+
+/* ---------- Warnbox ---------- */
+.warning-box {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 160, 0, 0.15);
+  border: 1px solid rgba(255, 160, 0, 0.5);
+  border-radius: 6px;
+  color: #ffa040;
+  font-size: 0.9rem;
+}
+
+/* ---------- Nochmal-Button ---------- */
+.retry-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+#retry-btn {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(231, 76, 60, 0.45);
+  touch-action: manipulation;
+  letter-spacing: 0.02em;
+}
+
+#retry-btn:hover {
+  background: linear-gradient(135deg, #e74c3c, #ff6b5b);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.65);
+  transform: translateY(-2px);
+}
+
+#retry-btn:active {
+  transform: translateY(0);
+}
+
+#retry-btn:focus-visible {
+  outline: 3px solid #f0c040;
+  outline-offset: 3px;
+}
+
+/* ---------- Footer ---------- */
+.app-footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: #604080;
+  font-size: 0.85rem;
+}
+
+/* ---------- Utility: hidden ---------- */
+[hidden] {
+  display: none !important;
+}
