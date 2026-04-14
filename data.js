@@ -54,10 +54,10 @@ export const categories = {
     label: "Dialekte",
     items: [
       "Bayerisch", "Berlinerisch", "Sächsisch", "Hamburgisch", "Schwäbisch",
-      "Kölsch", "Wienerisch", "Schweizerdeutsch", "Fränkisch", "Hessisch",
-      "Plattdeutsch", "Pfälzisch", "Thüringisch", "Brandenburgisch", "Ruhrdeutsch",
-      "Badisch", "Mecklenburgisch", "Westfälisch", "Oberpfälzisch", "Vorarlbergerisch",
-      "Tirolerisch", "Steirisch", "Kärntnerisch", "Elsässisch"
+      "Kölsch", "Fränkisch", "Hessisch", "Plattdeutsch", "Pfälzisch",
+      "Thüringisch", "Brandenburgisch", "Ruhrdeutsch", "Badisch", "Mecklenburgisch",
+      "Westfälisch", "Oberpfälzisch", "Moselfränkisch", "Niedersächsisch", "Berliner Schnauze",
+      "Österreichisch", "Schweizerdeutsch", "Jugendslang"
     ]
   },
   genres: {
